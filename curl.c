@@ -87,8 +87,7 @@ int main(int argc, char **argv)
   printf("%zu parsed URLs in %.1f secs, %.1f ns/URL, %.0f URLs/sec\n",
          count,
          (double)us/1000000.0,
-         (double)us*1000/count, count / (us/1000000.0),
-         ecount);
+         (double)us*1000/count, count / (us/1000000.0));
   printf("Errors: %zu (%.2f%%)\n", ecount, (double)ecount*100/count);
   return 0;
 }
