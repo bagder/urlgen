@@ -65,16 +65,16 @@ int main(int argc, char **argv)
   while(fgets(buffer, sizeof(buffer), stdin)) {
     char *nl = strchr(buffer, '\n');
     if(nl) {
-      CURLHcode hcode;
+      CURLUcode ucode;
       *nl = 0;
       for(o = 0; options[o] != END_OF_LIST; o++) {
         CURLU *p = curl_url();
-        hcode = curl_url_set(p, CURLUPART_URL, buffer, options[o]);
+        ucode = curl_url_set(p, CURLUPART_URL, buffer, options[o]);
         curl_url_cleanup(p);
         count++;
-        if(hcode) {
+        if(ucode) {
 #if 0
-          fprintf(stderr, "Failed [%u]: %s\n", (int)hcode, buffer);
+          fprintf(stderr, "Failed [%u]: %s\n", (int)ucode, buffer);
 #endif
           ecount++;
         }
