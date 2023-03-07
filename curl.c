@@ -84,7 +84,7 @@ int main(int argc, char **argv)
   gettimeofday(&end, NULL);
   diff = end.tv_sec-start.tv_sec;
   us = diff * 1000000 + end.tv_usec-start.tv_usec;
-  printf("%d parsed URLs in %.1f secs, %.1f ns/URL, %.0f URLs/sec\n",
+  printf("%zu parsed URLs in %.1f secs, %.1f ns/URL, %.0f URLs/sec\n",
          count,
          (double)us/1000000.0,
          (double)us*1000/count, count / (us/1000000.0),
